@@ -1,0 +1,237 @@
+/*Escribe una función (FUNCTION) que entregue (CONSOLE.LOG)la suma (VAR ACUMULADORA)de todos los número pares del 1 al 1000 (FOR)(I%2==0)- Puedes usar un operador de módulo para este ejercicio.*/
+
+function suma(){
+  var acumulador=0;
+  for (var h=1; h<=1000; h++){
+    if (h%2==0){
+      acumulador=acumulador+h;
+    }
+  }
+  console.log(acumulador);
+}
+suma();
+
+/*Escribe una función que devuelva la suma de todos los números impares entre 1 y 5000 (ej: 1+3+5+...+4997+4999).
+
+funtion sumaimpar(){
+	var acumular=0;
+
+	for(var i= 1; i<=5000; i++){
+	   if(i%2!=0){
+              acumular=acumular + i;
+	   }
+        }
+        return acumular;
+     }
+    console.log(sumaimpar());
+
+/*Escribe una función (FUNCTION) que devuelva (RETURN) la suma (ACUMULADOR)de todos los valores(FOR) dentro de un array (ARRAY) (ej:  [1,2,5] returns 8. [-5,2,5,12] returns 14). */
+
+function suma(){
+  var array=[1,2,5];
+  var acumular=0;
+    for (var i=0; i<array.length;i++){
+      acumular=acumular+array [i];
+    }
+  return acumular;
+}
+console.log(suma());
+
+/*Encuentra el mayor (max) Dado un array (var array PARAMETRO) con múltiples valores, escribe una función (function) que devuelva(return) el número mayor (ej: para [-3,3,5,7] el número mayor (max) es 7).  */
+
+
+function max(array){
+  var max = Math.max( ...array);
+  return max;
+
+}
+var array = [-3,3,5,7];
+
+console.log(max(array));
+
+function min(array){
+  var min = Math.min( ...array);
+  return min;
+
+}
+var array = [-3,3,5,7];
+
+console.log(min(array));
+
+/*Encuentra el mayor (max) Dado un array (var array PARAMETRO) con múltiples valores, escribe una función (function) que devuelva(return) el número mayor (ej: para [-3,3,5,7] el número mayor (max) es 7).  */
+
+function max(array){
+  var currentMax = array[0];
+ 
+  for(var i = 0; i <= array.length-1; i++){
+    if(array[i] > currentMax){
+      currentMax = array[i];
+    }
+ 
+  }
+ 
+  return currentMax;
+}
+ 
+var array = [-3,3,5,7];
+ 
+console.log(max(array));
+
+/*Encuentra el promedio (avg) Dado un array con múltiples valores, escribe una función (FUNCTION) que devuelva (RETURN)el promedio de los valores (ej: para [1,3,5,7,20] el promedio es 7.2).  */
+
+
+function avg(array){
+  var acumulador=0;
+  
+  for (var i=0; i<array.length;i++){
+      acumulador=acumulador+array[i];
+  }
+ return acumulador/array.length;
+}
+var lista= [1,3,5,7,20];
+console.log(avg(lista));
+
+
+Escribe una funci[on (FUNCTION) que devuelva (RETURN) un array (var ARRAY[]) de todos los números impares (i % 2 != 0) entre 1 y 50 (FOR) (ej: [1,3,5, …, 47,49]). Pista: Usa el método ‘push’. */
+ 
+function impar(rango){
+  var array = [];
+ 
+  for(var i = 1; i <= rango; i++){
+    if(i % 2 != 0){
+      array.push(i);
+    }
+  }
+ 
+  return array;
+ 
+}
+ 
+/*Mayor que Y - Dado un valor Y (var= parametro), escribe una función(FUNCTION) que toma un array (VAR PARAMETRO)y devuelve (RETURN)los valores mayores que Y(IF). Por ejemplo, si arr = [1,3,5,7] y Y = 3, tu función devolverá 2 (hay 2 números en el array mayores que 3, esto son 5 y 7).  */
+
+function contar(y,arr){
+  var contador=0;
+  for (var i=0; i<arr.length;i++){
+    if(array[i]>y){
+      contador=contador+1;
+    }
+  }
+  return contador;
+}
+  var limite=5;
+  var array=[1,3,5,7];
+
+console.log(contar(limite,array));
+
+
+ 
+var rango = 50;
+console.log(impar(rango));
+
+
+* Cuadrados
+Dado un array (var ARRAY PARAMETRO) con múltiples valores (FOR => Rango == arr.length), escribe una función (FUNCTION) que reemplace cada valor por el cuadrado del mismo valor y que lo retorne (ej: [1,5,10,-2] será [1,25,100,4])..
+*/
+ 
+function reemplazo(arr){
+   
+    for(var i=1; i < arr.length; i++){
+ 
+      arr[i] = arr[i] ** 2;
+    }  
+ 
+    return arr;
+ 
+}
+ 
+var nums = [1,5,10,-2];
+ 
+console.log(reemplazo(nums));
+
+Max/Min/Avg - Dado un array con múltiples valores, escribe una función que devuelva un nuevo array que solo contenga el valor mayor (max), menor (min) y promedio (avg) del array original (ej: [1,5,10,-2] devolverá [10,-2,3.5]).
+
+function maxMinAvg(arr){
+  var suma = 0;
+  var newArray = [];
+  var currentMax = arr[0];
+  var currentMin = arr[0];
+ 
+  /* PROMEDIO */
+ 
+  for(var i = 0; i < arr.length; i++){
+    suma = suma + arr[i];
+   
+  }
+ 
+  var promedio = suma/arr.length;
+ 
+  /* MAX */
+ 
+  for(var i=0; i<arr.length; i++){
+    if(arr[i] > currentMax){
+      currentMax = arr[i];
+    }
+  }
+ 
+  /* MIN */
+ 
+  for(var i=0; i<arr.length; i++){
+    if(arr[i] < currentMin){
+      currentMin = arr[i];
+    }
+  }
+ 
+ 
+  newArray.push(currentMax);
+  newArray.push(currentMin);
+  newArray.push(promedio);
+ 
+  return newArray;
+ 
+}
+ 
+var array = [1,5,10,-2];
+ 
+console.log(maxMinAvg(array));
+
+
+/*Intercambia Valores -Escribe una función (FUNCTION)que intercambie el primer y el último valor de cualquier array. La extensión mínima predeterminada del array es 2 (ej: [1,5,10,-2] será [-2,5,10,1]).  */
+
+function intercambio(arr){
+  var a= arr[0];
+  var b= arr[arr.length-1];
+
+  arr[0]=b;
+  arr[arr.length-1]=a;
+
+    return arr;
+}
+var numb=[1,5,10,-2];
+
+console.log(intercambio(numb));
+
+De Número a String Escribe una función que tome un array de números y reemplace cualquier valor negativo por el string ‘Dojo’. Por ejemplo, dado el array = [-1,-3,2], tu función devolverá [‘Dojo’,‘Dojo’,2].
+
+/*
+ 
+De Número a String
+ 
+Escribe una función (FUNCTION) que tome un array (var ARRAY PARAMETRO) de números y reemplace cualquier valor negativo por el string ‘Dojo’ (CICLO FOR). Por ejemplo, dado el array = [-1,-3,2], tu función devolverá [‘Dojo’,‘Dojo’,2].
+ 
+*/
+ 
+ 
+function reemplazo(arr){
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] < 0 ){
+     
+      arr[i] = 'Dojo';
+    }
+  }
+ 
+  return arr;
+}
+ 
+var nums = [-1,-3,2];
+ 
+console.log(reemplazo(nums));
